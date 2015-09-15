@@ -1145,4 +1145,11 @@ config FORCE_TOUCH_NDT
        help
          This driver provides support for Force Touch by NDT.
 
+config TOUCHBOOST_CONTROL
+	bool "Touch boost control"
+	depends on INPUT_TOUCHSCREEN
+	help
+	  Boeffla Kernels functionality to control input boost as touch boost
+	  in the Boeffla Config app
+
 endif
