@@ -393,6 +393,7 @@ struct synaptics_rmi4_data {
 	bool stylus_enable;
 	bool eraser_enable;
 	bool external_afe_buttons;
+	ktime_t timestamp;
 	int (*reset_device)(struct synaptics_rmi4_data *rmi4_data,
 			bool rebuild);
 	int (*irq_enable)(struct synaptics_rmi4_data *rmi4_data, bool enable,
