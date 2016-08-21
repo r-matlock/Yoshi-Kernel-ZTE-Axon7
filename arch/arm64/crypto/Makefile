@@ -45,5 +45,7 @@ CFLAGS_aes-glue-ce.o	:= -DUSE_V8_CRYPTO_EXTENSIONS
 
 CFLAGS_crc32-arm64.o	:= -mcpu=generic+crc
 
+ccflags-y := -O3
+
 $(obj)/aes-glue-%.o: $(src)/aes-glue.c FORCE
 	$(call if_changed_rule,cc_o_c)
