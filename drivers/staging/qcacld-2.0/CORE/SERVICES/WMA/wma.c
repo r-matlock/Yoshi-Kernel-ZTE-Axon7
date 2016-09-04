@@ -20178,6 +20178,7 @@ static inline void wma_free_wow_ptrn(tp_wma_handle wma, u_int8_t ptrn_id)
 	wma->wow.no_of_ptrn_cached--;
 }
 
+#ifdef WMA_DEBUG_ALWAYS
 /* Converts wow wakeup reason code to text format */
 static const u8 *wma_wow_wake_reason_str(A_INT32 wake_reason, tp_wma_handle wma)
 {
@@ -20269,6 +20270,7 @@ static const u8 *wma_wow_wake_reason_str(A_INT32 wake_reason, tp_wma_handle wma)
 	}
 	return "unknown";
 }
+#endif
 
 static void wma_beacon_miss_handler(tp_wma_handle wma, u_int32_t vdev_id,
 				    uint32_t rssi)
