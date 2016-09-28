@@ -1,3 +1,6 @@
+# CPUfreq cflags
+CFLAGS_cpufreq_hellsactive.o		:= -Wno-pointer-to-int-cast
+
 # CPUfreq core
 obj-$(CONFIG_CPU_FREQ)			+= cpufreq.o freq_table.o
 
@@ -24,6 +27,7 @@ obj-$(CONFIG_CPU_FREQ_GOV_DESPAIR)	+= cpufreq_despair.o
 obj-$(CONFIG_CPU_FREQ_GOV_ELEMENTALX)	+= cpufreq_elementalx.o
 obj-$(CONFIG_CPU_FREQ_GOV_WHEATLEY)	+= cpufreq_wheatley.o
 obj-$(CONFIG_CPU_FREQ_GOV_DYNAMIC_INTERACTIVE)	+= cpufreq_dynamic_interactive.o
+obj-$(CONFIG_CPU_FREQ_GOV_HELLSACTIVE)	+= cpufreq_hellsactive.o
 
 obj-$(CONFIG_CPUFREQ_DT)		+= cpufreq-dt.o
 obj-$(CONFIG_FINGERPRINT_BOOST)		+= fp-boost.o
