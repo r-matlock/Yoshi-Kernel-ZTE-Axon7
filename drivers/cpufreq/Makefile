@@ -29,6 +29,7 @@ obj-$(CONFIG_CPU_FREQ_GOV_WHEATLEY)	+= cpufreq_wheatley.o
 obj-$(CONFIG_CPU_FREQ_GOV_DYNAMIC_INTERACTIVE)	+= cpufreq_dynamic_interactive.o
 obj-$(CONFIG_CPU_FREQ_GOV_HELLSACTIVE)	+= cpufreq_hellsactive.o
 obj-$(CONFIG_CPU_FREQ_GOV_INTELLIACTIVE)	+= cpufreq_intelliactive.o
+obj-$(CONFIG_CPU_FREQ_GOV_LIGHTNING)	+= cpufreq_lightning.o
 
 obj-$(CONFIG_CPUFREQ_DT)		+= cpufreq-dt.o
 obj-$(CONFIG_FINGERPRINT_BOOST)		+= fp-boost.o
