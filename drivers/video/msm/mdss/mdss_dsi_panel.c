@@ -28,11 +28,16 @@
 #include "mdss_dsi.h"
 #include "mdss_dba_utils.h"
 
+#ifdef CONFIG_POWERSUSPEND
+#include <linux/powersuspend.h>
+#endif
+
 #include <linux/proc_fs.h>
 static struct proc_dir_entry * d_entry;
 static struct proc_dir_entry *d_entry_frame_count;
 static char  module_name[50]={"0"};
 extern u32 zte_frame_count;/*pan*/
+
 #define DT_CMD_HDR 6
 #define MIN_REFRESH_RATE 48
 #define DEFAULT_MDP_TRANSFER_TIME 14000
@@ -1830,6 +1835,10 @@ static int mdss_dsi_panel_on(struct mdss_panel_data *pdata)
 		return -EINVAL;
 	}
 
+#ifdef CONFIG_POWERSUSPEND
+	set_power_suspend_state_panel_hook(POWER_SUSPEND_INACTIVE);
+#endif
+
 	/* Ensure low persistence is disabled */
 	//mdss_dsi_panel_apply_display_setting(pdata, 0);
 
@@ -1935,6 +1944,10 @@ static int mdss_dsi_panel_off(struct mdss_panel_data *pdata)
 		mdss_dba_utils_video_off(pinfo->dba_data);
 		mdss_dba_utils_hdcp_enable(pinfo->dba_data, false);
 	}
+    
+#ifdef CONFIG_POWERSUSPEND
+	set_power_suspend_state_panel_hook(POWER_SUSPEND_ACTIVE);
+#endif
 
 	display_on = false;
 
