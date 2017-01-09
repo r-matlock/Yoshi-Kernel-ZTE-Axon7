@@ -551,6 +551,9 @@ extern struct cpufreq_governor cpufreq_gov_intelliactive;
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_LIGHTNING)
 extern struct cpufreq_governor cpufreq_gov_lightning;
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_lightning)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_NEBULA)
+extern struct cpufreq_governor cpufreq_gov_nebula;
+#define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_nebula)
 #endif
 
 /*********************************************************************
