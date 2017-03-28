@@ -513,7 +513,7 @@ static struct common_dbs_data ex_dbs_cdata = {
 	.get_cpu_dbs_info_s = get_cpu_dbs_info_s,
 	.gov_dbs_timer = ex_dbs_timer,
 	.gov_check_cpu = ex_check_cpu,
-	.init_ex = ex_init,
+	.init = ex_init,
 	.exit = ex_exit,
 };
 
