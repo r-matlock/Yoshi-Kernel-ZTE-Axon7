@@ -1222,8 +1222,8 @@ int32_t t4k35_read_lsc_awb_data(struct msm_eeprom_ctrl_t *e_ctrl,
 		t4k35_read_page_and_back_page_data(e_ctrl,emap,i,buff_data,bake_buff_data);
 		CDBG("%s:end i = %d \n",__func__,i);
     		if (0 == buff_data[0]) {
-			memset(buff_data,T4K35_PAGE_LEN,0);
-			memset(bake_buff_data,T4K35_PAGE_LEN,0);
+			memset(buff_data, 0, T4K35_PAGE_LEN);
+			memset(bake_buff_data, 0, T4K35_PAGE_LEN);
       			continue;
 	      }else {
 	 	 	for(j = 2; j < 64; j++) 
@@ -1353,7 +1353,7 @@ static int t4k35_read_eeprom_memory(struct msm_eeprom_ctrl_t *e_ctrl,
 	struct msm_eeprom_memory_map_t *emap = block->map;
 	struct msm_eeprom_board_info *eb_info;
 	uint8_t *memptr = block->mapdata;
-       int32_t num_byte = T4K35_PAGE_LEN;
+	int32_t num_byte = T4K35_PAGE_LEN;
 	uint8_t *buff_data;
 	uint8_t *bake_buff_data;
 	uint16_t  sensor_module_id = 0;
@@ -1362,16 +1362,16 @@ static int t4k35_read_eeprom_memory(struct msm_eeprom_ctrl_t *e_ctrl,
 		pr_err("%s e_ctrl is NULL", __func__);
 		return -EINVAL;
 	}
-	
+
 	buff_data = kzalloc(num_byte, GFP_KERNEL);
-	memset(buff_data,num_byte,0);
+	memset(buff_data, 0, num_byte);
 	bake_buff_data = kzalloc(num_byte, GFP_KERNEL);
 	memset(bake_buff_data,0,num_byte);
-	
+
 	eb_info = e_ctrl->eboard_info;
 	e_ctrl->i2c_client.addr_type = MSM_CAMERA_I2C_WORD_ADDR;
-	
-       t4k35_enable_read_mode(e_ctrl,1);
+
+	t4k35_enable_read_mode(e_ctrl,1);
 
 	rc = t4k35_read_module_info_golden_data(e_ctrl,&(emap[0]), memptr,buff_data,bake_buff_data);
 
