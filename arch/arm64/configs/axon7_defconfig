@@ -1,6 +1,6 @@
-# Yoshi kernel for the ZTE Axon 7, revision 3
+# Yoshi kernel for the ZTE Axon 7, revision 4
 
-CONFIG_LOCALVERSION="-yoshi-r3"
+CONFIG_LOCALVERSION="-yoshi-r4"
 CONFIG_AUDIT=y
 # CONFIG_AUDITSYSCALL is not set
 CONFIG_NO_HZ=y
@@ -759,3 +759,6 @@ CONFIG_QMI_ENCDEC=y
 
 # KCAL
 CONFIG_FB_MSM_MDSS_KCAL_CTRL=y
+
+# Adreno idler
+CONFIG_ADRENO_IDLER=y
