@@ -1,6 +1,6 @@
-# Yoshi kernel for the ZTE Axon 7, revision 3
+# Yoshi kernel for the ZTE Axon 7, revision 4
 
-CONFIG_LOCALVERSION="-yoshi-r3"
+CONFIG_LOCALVERSION="-yoshi-r4"
 # CONFIG_SWAP is not set
 CONFIG_AUDIT=y
 # CONFIG_AUDITSYSCALL is not set
@@ -747,3 +747,6 @@ CONFIG_CRYPTO_AES_ARM64_CE_BLK=y
 CONFIG_CRYPTO_AES_ARM64_NEON_BLK=y
 CONFIG_CRYPTO_CHACHA20_NEON=y
 CONFIG_QMI_ENCDEC=y
+
+#Miscellaneous
+CONFIG_ADRENO_IDLER=y
