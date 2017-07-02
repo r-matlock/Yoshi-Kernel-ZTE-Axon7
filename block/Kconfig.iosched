@@ -11,8 +11,6 @@ config IOSCHED_CFQ
 	  and low latency working environment, suitable for both desktop
 	  and server systems.
 
-	  This is the default I/O scheduler.
-
 config CFQ_GROUP_IOSCHED
 	bool "CFQ Group Scheduling support"
 	depends on IOSCHED_CFQ && BLK_CGROUP
