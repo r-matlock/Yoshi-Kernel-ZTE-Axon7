@@ -1,6 +1,6 @@
-# Yoshi kernel for the ZTE Axon 7, revision 7
+# Yoshi kernel for the ZTE Axon 7, revision 8
 
-CONFIG_LOCALVERSION="-yoshi-r7"
+CONFIG_LOCALVERSION="-yoshi-r8"
 CONFIG_AUDIT=y
 # CONFIG_AUDITSYSCALL is not set
 CONFIG_NO_HZ=y
