@@ -1,6 +1,6 @@
-# Yoshi kernel for the ZTE Axon 7, revision 11
+# Yoshi kernel for the ZTE Axon 7, revision 12
 
-CONFIG_LOCALVERSION="-yoshi-r11"
+CONFIG_LOCALVERSION="-yoshi-r12"
 # CONFIG_SWAP is not set
 CONFIG_AUDIT=y
 # CONFIG_AUDITSYSCALL is not set
@@ -786,6 +786,10 @@ CONFIG_DYNAMIC_FSYNC=y
 
 # Hotplugs
 CONFIG_ALUCARD_HOTPLUG=y
+CONFIG_LAZYPLUG=y
 
 # Sound control
 CONFIG_SOUND_CONTROL=y
+
+# State notifier
+CONFIG_STATE_NOTIFIER=y
