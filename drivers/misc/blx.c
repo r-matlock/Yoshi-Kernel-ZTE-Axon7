@@ -13,11 +13,11 @@
 #include <linux/miscdevice.h>
 #include <linux/blx.h>
 
-static int charging_cap_level = 100;
+static int charging_limit = 100;
 
 static ssize_t blx_cap_level_read(struct device * dev, struct device_attribute * attr, char * buf)
 {
-	return sprintf(buf, "%u\n", charging_cap_level);
+	return sprintf(buf, "%u\n", charging_limit);
 }
 
 static ssize_t blx_cap_level_write(struct device * dev, struct device_attribute * attr, const char * buf, size_t size)
@@ -28,9 +28,9 @@ static ssize_t blx_cap_level_write(struct device * dev, struct device_attribute 
 	{
 		if (data >= 0 && data <= 100)
 		{
-			charging_cap_level = data;
+			charging_limit = data;
 
-			pr_info("BLX charging cap_level set to %u\n", charging_cap_level);
+			pr_info("BLX charging cap_level set to %u\n", charging_limit);
 		}
 		else
 		{
@@ -50,12 +50,12 @@ static ssize_t blx_version(struct device * dev, struct device_attribute * attr, 
 	return sprintf(buf, "%u\n", 1);
 }
 
-static DEVICE_ATTR(charging_cap_level, S_IRUGO|S_IWUSR, blx_cap_level_read, blx_cap_level_write);
+static DEVICE_ATTR(charging_limit, S_IRUGO|S_IWUSR, blx_cap_level_read, blx_cap_level_write);
 static DEVICE_ATTR(version, S_IRUGO , blx_version, NULL);
 
 static struct attribute *blx_attributes[] = 
     {
-	&dev_attr_charging_cap_level.attr,
+	&dev_attr_charging_limit.attr,
 	&dev_attr_version.attr,
 	NULL
 };
@@ -73,7 +73,7 @@ static struct miscdevice blx_device =
 
 int get_cap_level(void)
 {
-	return charging_cap_level;
+	return charging_limit;
 }
 EXPORT_SYMBOL(get_cap_level);
 
