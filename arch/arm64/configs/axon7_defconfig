@@ -1,6 +1,6 @@
-# Yoshi kernel for the ZTE Axon 7, revision 10
+# Yoshi kernel for the ZTE Axon 7, revision 11
 
-CONFIG_LOCALVERSION="-yoshi-r10"
+CONFIG_LOCALVERSION="-yoshi-r11"
 # CONFIG_SWAP is not set
 CONFIG_AUDIT=y
 # CONFIG_AUDITSYSCALL is not set
@@ -765,6 +765,12 @@ CONFIG_CRYPTO_CRC32_ARM64=y
 CONFIG_QMI_ENCDEC=y
 
 ## Yoshi kernel additions
+
+# BLX
+CONFIG_BLX=y
+
+# Fast charging
+CONFIG_FORCE_FAST_CHARGE=y
 
 # KCAL
 CONFIG_FB_MSM_MDSS_KCAL_CTRL=y
